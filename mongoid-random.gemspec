@@ -18,15 +18,13 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency('mongoid', [ '>= 2.0.0' ])
+  s.add_dependency('mongoid', [ '>= 3.0.0' ])
 
-  s.add_development_dependency('bson_ext')
-  s.add_development_dependency('minitest', [ '>= 2.7.0' ])
-  s.add_development_dependency('mini_shoulda', [ '>= 0.4.0' ])
-  s.add_development_dependency('spork', [ '>= 0.9.0.rc' ])
-  s.add_development_dependency('spork-testunit', [ '>= 0.0.6' ])
-  s.add_development_dependency('guard-minitest', [ '>= 0.4.0' ])
-  s.add_development_dependency('guard-spork', [ '>= 0.3.1' ])
-  s.add_development_dependency('turn', [ '>= 0.8.3' ])
+  s.add_development_dependency('rspec', [ '>= 2.13.0' ])
+  s.add_development_dependency('guard', [ '>= 1.8.0' ])
+  s.add_development_dependency('guard-rspec', [ '>= 2.5.0' ])
+  s.add_development_dependency('guard-spork', [ '>= 1.5.0' ])
+  s.add_development_dependency('listen', [ '>= 1.0.0' ])
+  s.add_development_dependency('database_cleaner', [ '~> 0.9.0 ' ])
 
 end

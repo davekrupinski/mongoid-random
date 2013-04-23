@@ -6,8 +6,6 @@ module Mongoid
     included do
       field :_randomization_key, type: Float
       before_create :generate_mongoid_random_key
-
-      index [ include?(Mongoid::Paranoia) ? [ :deleted_at, 1 ] : nil, [ :_randomization_key, 1 ] ].compact # TODO: MONGOID: Apply a patch
     end
 
 
@@ -30,7 +28,6 @@ module Mongoid
     def generate_mongoid_random_key
       self._randomization_key = rand
     end
-
 
   end
 end
